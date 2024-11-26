@@ -1,0 +1,112 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: #252525;
+  display: flex;
+  height: 100vh;
+  color: white;
+  font-family: monospace;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 48px;
+}
+
+p span{
+  animation: .15s ease opponent-choice-animation;
+  display: inline-block;
+}
+
+span:nth-of-type(2){
+  animation-delay: .12s;
+}
+
+span:nth-of-type(3){
+  animation-delay: .26s;
+}
+
+span:nth-of-type(4){
+  animation-delay: .39s;
+}
+
+.cards-wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+}
+
+.cards {
+  transition: transform 0.15s ease-in-out;
+}
+
+.cards:hover {
+  transform: scale(1.1);
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.opponent-choice-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.opponent-choice-text {
+  margin-right: 12px;
+}
+
+hr {
+  width: 360px;
+}
+
+.result-active {
+  animation: 0.3s ease-in-out result-animation;
+}
+
+p:last-of-type {
+  height: 1.5rem;
+}
+
+@keyframes result-animation {
+  50% {
+    transform: scaleX(1.2) scaleY(3);
+  }
+  75% {
+    transform: scaleX(1.7) scaleY(0.8);
+  }
+}
+
+@keyframes opponent-choice-animation {
+  50% {
+    transform: scale(1.1);
+    color: lightgreen;
+  }
+}
+
+@media screen and (max-width: 448px) {
+  body {
+    font-size: 1.2rem;
+    gap: 36px;
+  }
+  hr {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 370px) {
+  body {
+    font-size: 1rem;
+    gap: 24px;
+  }
+  hr {
+    width: 240px;
+  }
+}
