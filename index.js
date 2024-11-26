@@ -8,14 +8,14 @@ let userChoice = "",
   opponentChoice = "",
   opponentChoiceNumber;
 
-// For each of the choises, we apply the eventListener
+// For each of the choices, we apply the eventListener
 for (let i = 0; i < 3; i++) {
   cards[i].addEventListener("click", () => {
     for (let a = 0; a < 3; a++) {
       cards[a].style.fontWeight = "normal";
     }
     cards[i].style.fontWeight = "bold";
-    userChoice = cards[i].textContent.slice(2); //2 because an emoji takes 2 caracters
+    userChoice = cards[i].textContent.slice(2); //2 because a special caracter takes the space of 2 caracters.
 
     opponentChoiceNumber = Math.floor(Math.random() * 3); //choses a number between 0 and 2
 
@@ -28,8 +28,8 @@ for (let i = 0; i < 3; i++) {
       opponentChoice = "✂️scissors";
     }
     opponentChoiceText.textContent = opponentChoice; //applies the text to the <p> in the HTML
-    
-    resultText.classList.add("result-active");//adds an animation to the result then remove it at the end
+
+    resultText.classList.add("result-active"); //adds an animation to the result then remove it at the end
     setTimeout(() => {
       resultText.classList.remove("result-active");
     }, 300);
@@ -39,7 +39,7 @@ for (let i = 0; i < 3; i++) {
       resultText.textContent = "EQUAL!";
       resultText.style.color = "yellow";
     } else if (
-      //just applying the rules of the game here
+      //just applying the rules of the game here ▼ ▼ ▼
       (userChoice == "scissors" && opponentChoice == "📜paper") ||
       (userChoice == "rock" && opponentChoice == "✂️scissors") ||
       (userChoice == "paper" && opponentChoice == "🪨rock")
@@ -53,4 +53,4 @@ for (let i = 0; i < 3; i++) {
     }
   });
 }
-//a really simple code, but nice to train yourself into learning JS, really liked it!
+//A really simple code, but nice to train yourself into learning JS, really liked it!
