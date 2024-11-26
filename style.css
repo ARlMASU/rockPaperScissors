@@ -20,21 +20,21 @@ body {
   gap: 48px;
 }
 
-p span{
-  animation: .15s ease opponent-choice-animation;
+p span {
+  animation: 0.15s ease word-bump-animation;
   display: inline-block;
 }
 
-span:nth-of-type(2){
-  animation-delay: .12s;
+span:nth-of-type(2) {
+  animation-delay: 0.12s;
 }
 
-span:nth-of-type(3){
-  animation-delay: .26s;
+span:nth-of-type(3) {
+  animation-delay: 0.26s;
 }
 
-span:nth-of-type(4){
-  animation-delay: .39s;
+span:nth-of-type(4) {
+  animation-delay: 0.39s;
 }
 
 .cards-wrap {
@@ -85,7 +85,7 @@ p:last-of-type {
   }
 }
 
-@keyframes opponent-choice-animation {
+@keyframes word-bump-animation {
   50% {
     transform: scale(1.1);
     color: lightgreen;
