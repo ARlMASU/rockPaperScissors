@@ -1,7 +1,8 @@
 // Class imported
 const cards = document.querySelectorAll(".cards"),
   opponentChoiceText = document.querySelector(".opponent-choice"),
-  resultText = document.querySelector(".result");
+  resultText = document.querySelector(".result"),
+  body = document.body;
 
 // Creation of the variables
 let userChoice = "",
@@ -38,6 +39,7 @@ for (let i = 0; i < 3; i++) {
       //if the text is the same, then the result is equal
       resultText.textContent = "EQUAL!";
       resultText.style.color = "yellow";
+      body.style.background = "#292900";
     } else if (
       //just applying the rules of the game here ▼ ▼ ▼
       (userChoice == "scissors" && opponentChoice == "📜paper") ||
@@ -46,10 +48,12 @@ for (let i = 0; i < 3; i++) {
     ) {
       resultText.textContent = "WIN!";
       resultText.style.color = "lightGreen";
+      body.style.background = "#202f20";
     } else {
       // and if it is anything else, you lose
       resultText.textContent = "LOSE!";
       resultText.style.color = "pink";
+      body.style.background = "#312527";
     }
   });
 }
